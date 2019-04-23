@@ -32,7 +32,7 @@ import zunayedhassan.SimpleRichTextFX.RichText;
 public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
-    
+    protected KBSManager kbsManager = new KBSManager();
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
@@ -49,7 +49,7 @@ public class RootUI extends BaseUI {
     public RootUI() {    
         this._initializeLayout();
         this._initializeEvents();
-        
+        this.setBottom(kbsManager.OUR);
         // Example        
         this.RichTextControl.AddText("Hello World ", 12);
         this.RichTextControl.AddLine();

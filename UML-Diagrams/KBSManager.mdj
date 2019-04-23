@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 157,
 											"top": 135,
-											"width": 80.9072265625,
+											"width": 335,
 											"height": 13,
 											"text": "KBSManager"
 										},
@@ -90,7 +90,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 128,
-									"width": 90.9072265625,
+									"width": 345,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFqSfjMYHIR8ZA="
@@ -117,7 +117,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 153,
-									"width": 90.9072265625,
+									"width": 345,
 									"height": 10
 								},
 								{
@@ -132,7 +132,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 163,
-									"width": 90.9072265625,
+									"width": 345,
 									"height": 10
 								},
 								{
@@ -168,8 +168,8 @@
 							"containerChangeable": true,
 							"left": 152,
 							"top": 128,
-							"width": 90.9072265625,
-							"height": 45,
+							"width": 345,
+							"height": 233,
 							"nameCompartment": {
 								"$ref": "AAAAAAFqSfjMYHIQHzs="
 							},
@@ -195,6 +195,14 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "KBSManager"
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFqSiAK9nI4Rn0=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Class1"
 				}
 			]
 		}
