@@ -10,7 +10,6 @@ public class KBSManager {
     KBSManager(){
         this._init();
         this._initializeEvents();
-
     }
     private SVGPath _init() {
         String path = "M 100 100 L 300 100 L 200 200 L 0 200 z";
