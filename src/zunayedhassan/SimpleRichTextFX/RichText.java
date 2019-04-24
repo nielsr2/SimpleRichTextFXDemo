@@ -51,7 +51,7 @@ public class RichText extends VBox {
     
     protected ContextMenu contextMenu = this._getContextMenu();
     
-    public String CurrentFontFamily = "System";
+    public String CurrentFontFamily = "Times New Roman"; // ********************* p2 changed
     public int CurrentFontSize = Alphabet.DEFAULT_FONT_SIZE;
     public boolean IsCurrentFontBold = false;
     public boolean IsCurrentFontItalic = false;

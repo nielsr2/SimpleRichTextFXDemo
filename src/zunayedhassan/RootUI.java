@@ -54,36 +54,13 @@ public class RootUI extends BaseUI {
         //*********************************************************************************************************************************************************************** P2
         this.setBottom(kbsManager.OUR);
         //*********************************************************************************************************************************************************************** P2
-        // Example        
-        this.RichTextControl.AddText("Hello World ", 12);
-        this.RichTextControl.AddLine();
-        this.RichTextControl.AddText("Rich Text Test", 28);
-        this.RichTextControl.AddLine();
-        this.RichTextControl.AddText("This is another line", 20);
-        this.RichTextControl.SetFontInLine(1, 1, 5, "Comic Sans MS");
-        this.RichTextControl.SetFontSizeInLine(1, 1, 5, 36);
-        this.RichTextControl.SetBoldInLine(1, 1, 5, true);
-        this.RichTextControl.SetItalicInLine(2, 1, 5, true);
-        this.RichTextControl.SetUndelineInLine(1, 1, 5, true);
-        this.RichTextControl.SetStrikethroughInLine(2, 1, 5, true);
-        this.RichTextControl.SetLeftJustifyInLine(1);
-        this.RichTextControl.SetCenterJustifyInLine(2);
-        this.RichTextControl.SetRightJustifyInLine(3);
-        this.RichTextControl.SetColorInLine(2, 1, 5, Color.web("#51dacd"));
-        this.RichTextControl.AddLine();
-        this.RichTextControl.AddText("Spellcheck is also available now!!!", 28);
-        this.RichTextControl.SetFontSizeInLine(1, 1, 5, 36);
-        this.RichTextControl.SetBoldInLine(3, 1, 5, false);
-        this.RichTextControl.SetItalicInLine(3, 1, 5, false);
-        this.RichTextControl.SetUndelineInLine(3, 1, 5, false);
-        this.RichTextControl.SetStrikethroughInLine(3, 1, 5, false);
     }
     
     private ComboBox<String> _getFontsCombobox() {
         ComboBox<String> fontsCombobox = new ComboBox<>();
         List<String> fontsList = Font.getFamilies();
         fontsCombobox.getItems().addAll(fontsList);
-        
+
         int defaultFontIndex = fontsList.indexOf("Times New Roman");
         fontsCombobox.getSelectionModel().select(defaultFontIndex);
         
