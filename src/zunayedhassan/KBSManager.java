@@ -5,9 +5,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 //import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
-//import com.fxexperience.javafx.animation;
-// import com.fxexperience.javafx.util;
+import com.fxexperience.javafx.animation.*;
 
+// import com.fx.javafx.util;
 
 public class KBSManager {
     SVGPath OUR = this._init();
@@ -34,6 +34,7 @@ public class KBSManager {
             public void handle(MouseEvent event) {
                 System.out.println( "Hi there! You clicked me!");
                 OUR.setFill(Color.RED);
+                new TadaTransition(OUR).play();
             }
         });
     }
