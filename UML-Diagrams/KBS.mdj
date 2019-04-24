@@ -214,7 +214,7 @@
 											"top": 217,
 											"width": 143.4189453125,
 											"height": 13,
-											"text": "+pinned: boolean",
+											"text": "-pinned: boolean",
 											"horizontalAlignment": 0
 										}
 									],
@@ -411,6 +411,7 @@
 								"$ref": "AAAAAAFqTpLr0T7MF8Y="
 							},
 							"name": "pinned",
+							"visibility": "private",
 							"type": "boolean"
 						}
 					],
