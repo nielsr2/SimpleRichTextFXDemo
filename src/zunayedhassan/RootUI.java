@@ -84,7 +84,7 @@ public class RootUI extends BaseUI {
         List<String> fontsList = Font.getFamilies();
         fontsCombobox.getItems().addAll(fontsList);
         
-        int defaultFontIndex = fontsList.indexOf("System");
+        int defaultFontIndex = fontsList.indexOf("Times New Roman");
         fontsCombobox.getSelectionModel().select(defaultFontIndex);
         
         return fontsCombobox;
