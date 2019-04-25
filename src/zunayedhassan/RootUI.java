@@ -36,6 +36,7 @@ public class RootUI extends BaseUI {
     public RichText RichTextControl = new RichText();
     //*********************************************************************************************************************************************************************** P2
     protected KBSManager kbsManager = new KBSManager();
+    protected KBS KBS = new KBS();
     //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
@@ -161,7 +162,14 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetBold(isBold);
             }
         });
-        
+        this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBS.KBStype[0]++;
+                for(int i=0;i<KBS.KBStype.length;i++)//length is the property of array
+                System.out.println(KBS.KBStype[i]);
+            }
+        });
         this.italicToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isItalic) {
