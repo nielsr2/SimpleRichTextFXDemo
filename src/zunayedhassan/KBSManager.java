@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
@@ -20,8 +21,7 @@ import static javafx.geometry.Pos.*;
 
 public class KBSManager {
     SVGPath OUR = this._init();
-    KBS rectTest1 = new KBS();
-    KBS rectTest2 = new KBS();
+
 
 
     KBSManager(){
@@ -61,22 +61,38 @@ public class KBSManager {
         });
     }
     public FlowPane initializeKBS(){
+        KBS kbs = new KBS();
+
         FlowPane kbsPane = new FlowPane(Orientation.VERTICAL);
         kbsPane.setPadding(new Insets( 5,5,5,5));
         kbsPane.setVgap(5);
         kbsPane.setAlignment(BOTTOM_RIGHT);
 
-
-
-  //      rect1.displayKBS();
-
         Rectangle rectangle1 = new Rectangle(100,100,Color.RED);
         Rectangle rectangle2 = new Rectangle(100,100,Color.RED);
-        kbsPane.getChildren().addAll (rectangle1, rectangle2);
 
+        Group g = new Group();
+        Rectangle baseRect = new Rectangle(100,50);
+
+        Rectangle inside = new Rectangle(50,20);
+        inside.setFill(Color.BLUE);
+        g.getChildren().addAll(baseRect,inside);
+
+        kbsPane.getChildren().addAll (rectangle1, rectangle2, g, kbs.displayKBS());
 
         return kbsPane;
-
     }
+/*
+    public FlowPane kbs1Test() {
+        FlowPane kbs1Test = new FlowPane();
+        Rectangle r = new Rectangle(10,10);
+        r.setWidth(10);
+        r.setHeight(10);
+        r.setFill(Color.BLUE);
+        kbs1Test.getChildren().add(r);
+        return kbs1Test;
+    }
+
+ */
 
 }

@@ -1,8 +1,11 @@
 package zunayedhassan;
 
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
-public class KBS {
+ public class KBS extends Rectangle {
     private String oprSystem;
     private boolean visible = false;
     private int kbsTimesUsed = 0;
