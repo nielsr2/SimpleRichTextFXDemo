@@ -1,5 +1,6 @@
 package zunayedhassan;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -34,7 +35,16 @@ public class KBSManager {
             public void handle(MouseEvent event) {
                 System.out.println( "Hi there! You clicked me!");
                 OUR.setFill(Color.RED);
-                new TadaTransition(OUR).play();
+                FadeInDownBigTransition Anim = new FadeInDownBigTransition(OUR);
+                Anim.setOnFinished(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        new TadaTransition(OUR).play();
+                    }
+                });
+                Anim.play();
+
+
             }
         });
     }
