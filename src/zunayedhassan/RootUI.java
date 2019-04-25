@@ -39,7 +39,7 @@ public class RootUI extends BaseUI {
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
     protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-bold.png");
-    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-italic.png", "_bold");
+    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-italic.png");
     protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-underline.png");
     protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-strikethrough.png");
     protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-left.png");
@@ -52,7 +52,7 @@ public class RootUI extends BaseUI {
         this._initializeLayout();
         this._initializeEvents();
         //*********************************************************************************************************************************************************************** P2
-//        this.setBottom(kbsManager.OUR);
+        this.setBottom(kbsManager.OUR);
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 

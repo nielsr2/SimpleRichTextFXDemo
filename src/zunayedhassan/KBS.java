@@ -2,11 +2,11 @@ package zunayedhassan;
 
 public class KBS {
     private String oprSystem;
-    boolean visible = false;
-    int kbsTimesUsed = 0;
-    int tbTimesClicked = 0;
-    int nrOnList;
-    boolean pinned;
+    private boolean visible = false;
+    private int kbsTimesUsed = 0;
+    private int tbTimesClicked = 0;
+    private int nrOnList;
+    private boolean pinned;
 
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
