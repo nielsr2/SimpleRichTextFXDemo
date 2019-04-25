@@ -67,18 +67,13 @@ public class KBSManager {
         kbsPane.setPadding(new Insets( 5,5,5,5));
         kbsPane.setVgap(5);
         kbsPane.setAlignment(BOTTOM_RIGHT);
+        kbsPane.setStyle("-fx-border-color: red");
 
-        Rectangle rectangle1 = new Rectangle(100,100,Color.RED);
-        Rectangle rectangle2 = new Rectangle(100,100,Color.RED);
 
-        Group g = new Group();
-        Rectangle baseRect = new Rectangle(100,50);
 
-        Rectangle inside = new Rectangle(50,20);
-        inside.setFill(Color.BLUE);
-        g.getChildren().addAll(baseRect,inside);
 
-        kbsPane.getChildren().addAll (rectangle1, rectangle2, g, kbs.displayKBS());
+
+        kbsPane.getChildren().addAll ( kbs.displayKBS());
 
         return kbsPane;
     }
