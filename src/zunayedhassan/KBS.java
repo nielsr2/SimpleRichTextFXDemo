@@ -1,5 +1,7 @@
 package zunayedhassan;
 
+import javafx.scene.shape.Rectangle;
+
 public class KBS {
     private String oprSystem;
     private boolean visible = false;
@@ -8,9 +10,18 @@ public class KBS {
     private int nrOnList;
     private boolean pinned;
 
+    KBS(){
+
+    }
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
+
+    public Rectangle displayKBS(){
+       return new Rectangle(100,100,100,50);
+    }
+
+
 
 
 

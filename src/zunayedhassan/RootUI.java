@@ -25,6 +25,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import zunayedhassan.SimpleRichTextFX.RichText;
 
+import static zunayedhassan.KBS.*;
+
 /**
  *
  * @author Zunayed Hassan
@@ -52,7 +54,8 @@ public class RootUI extends BaseUI {
         this._initializeLayout();
         this._initializeEvents();
         //*********************************************************************************************************************************************************************** P2
-        this.setBottom(kbsManager.OUR);
+        //this.setBottom(kbsManager.OUR);
+        this.setRight(kbsManager.initializeKBS());
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 

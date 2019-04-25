@@ -1,17 +1,27 @@
 package zunayedhassan;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 //import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.SVGPath;
 import com.fxexperience.javafx.animation.*;
+
+import static javafx.geometry.Pos.*;
 
 // import com.fx.javafx.util;
 
 public class KBSManager {
     SVGPath OUR = this._init();
+    KBS rectTest1 = new KBS();
+    KBS rectTest2 = new KBS();
 
 
     KBSManager(){
@@ -29,6 +39,8 @@ public class KBSManager {
         svgpath.setStroke(Color.BLACK);
         return svgpath;
     }
+
+
     private void _initializeEvents() {
         this.OUR.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -48,4 +60,23 @@ public class KBSManager {
             }
         });
     }
+    public FlowPane initializeKBS(){
+        FlowPane kbsPane = new FlowPane(Orientation.VERTICAL);
+        kbsPane.setPadding(new Insets( 5,5,5,5));
+        kbsPane.setVgap(5);
+        kbsPane.setAlignment(BOTTOM_RIGHT);
+
+
+
+  //      rect1.displayKBS();
+
+        Rectangle rectangle1 = new Rectangle(100,100,Color.RED);
+        Rectangle rectangle2 = new Rectangle(100,100,Color.RED);
+        kbsPane.getChildren().addAll (rectangle1, rectangle2);
+
+
+        return kbsPane;
+
+    }
+
 }
