@@ -12,10 +12,11 @@ import javafx.scene.shape.Shape;
     private int tbTimesClicked = 0;
     private int nrOnList;
     private boolean pinned;
-
+    public int KBStype[] = new int[5];
     KBS(){
 
     }
+
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
