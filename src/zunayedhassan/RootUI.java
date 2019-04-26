@@ -56,12 +56,13 @@ public class RootUI extends BaseUI {
         this._initializeEvents();
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
-
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 
         //*********************************************************************************************************************************************************************** P2
     }
+
+
 
 
 

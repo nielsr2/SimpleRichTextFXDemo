@@ -17,4 +17,8 @@ public class Settings {
     public static final String[][]  FONTS                = new String[][] { };
 
     public static final boolean     IS_SCENE_TRANSPARENT = false;
+
+    public static final String      OS                   =System.getProperty("os.name");
+
+
 }
