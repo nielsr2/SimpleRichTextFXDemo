@@ -36,8 +36,8 @@ public class KBS extends Group {
 
         // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
        // Rectangle backgroundRect = new Rectangle(170,50, Color.LIGHTGREY);
-        Color grColor1 = new Color(0.5, 0.1, 0.9, 0.20);
-        Color grColor2 = new Color(0.1, 0.7, 0.1, 0.20);
+        Color grColor1 = new Color(0.5, 0.5, 0.5, 0.30);
+        Color grColor2 = new Color(0.7, 0.7, 0.7, 0.15);
 
         Stop[] stops = new Stop[] { new Stop(0, grColor1), new Stop(1, grColor2)};
         LinearGradient lg1 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stops);
@@ -48,7 +48,7 @@ public class KBS extends Group {
         HBox content = new HBox(5);
         content.setPadding(new Insets(5,5,5,5));
 
-        ImageView imageView = new ImageView(new Image("zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/CutIcon.png"));
+        ImageView imageView = new ImageView(new Image("zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/CutIconHR.png"));
         imageView.setFitWidth(40);
         imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
@@ -63,11 +63,4 @@ public class KBS extends Group {
        return group;
 
     }
-
-
-
-
-
-
-
 }
