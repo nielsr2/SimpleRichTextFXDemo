@@ -66,8 +66,9 @@ public class KBSManager {
         FlowPane kbsPane = new FlowPane(Orientation.VERTICAL);
         kbsPane.setPadding(new Insets( 5,5,5,5));
         kbsPane.setVgap(5);
+
         kbsPane.setAlignment(BOTTOM_RIGHT);
-        kbsPane.setStyle("-fx-border-color: red");
+        //kbsPane.setStyle("-fx-border-color: red");
 
 
 
@@ -77,17 +78,4 @@ public class KBSManager {
 
         return kbsPane;
     }
-/*
-    public FlowPane kbs1Test() {
-        FlowPane kbs1Test = new FlowPane();
-        Rectangle r = new Rectangle(10,10);
-        r.setWidth(10);
-        r.setHeight(10);
-        r.setFill(Color.BLUE);
-        kbs1Test.getChildren().add(r);
-        return kbs1Test;
-    }
-
- */
-
 }

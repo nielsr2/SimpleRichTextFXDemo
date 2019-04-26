@@ -25,6 +25,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import zunayedhassan.SimpleRichTextFX.RichText;
 
+
 import static zunayedhassan.KBS.*;
 
 /**
@@ -35,7 +36,6 @@ public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
     //*********************************************************************************************************************************************************************** P2
-    protected KBSManager kbsManager = new KBSManager();
     protected KBS KBS = new KBS();
     //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
@@ -56,13 +56,15 @@ public class RootUI extends BaseUI {
         this._initializeEvents();
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
-        this.setRight(kbsManager.initializeKBS());
+
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 
         //*********************************************************************************************************************************************************************** P2
     }
-    
+
+
+
     private ComboBox<String> _getFontsCombobox() {
         ComboBox<String> fontsCombobox = new ComboBox<>();
         List<String> fontsList = Font.getFamilies();
@@ -126,7 +128,6 @@ public class RootUI extends BaseUI {
         );
         
         this.setTop(this.RichTextToolBar);
-        
         this.scrollPane = new ScrollPane(this.RichTextControl);
         this.setCenter(this.RichTextControl);
         
@@ -165,9 +166,7 @@ public class RootUI extends BaseUI {
         this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                KBS.KBStype[0]++;
-                for(int i=0;i<KBS.KBStype.length;i++)//length is the property of array
-                System.out.println(KBS.KBStype[i]);
+            KBSused();
             }
         });
         this.italicToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
@@ -176,21 +175,36 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetItalic(isItalic);
             }
         });
-        
+        this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.underlineToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isUnderline) {
                 RichTextControl.SetUnderline(isUnderline);
             }
         });
-        
+        this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.strikethroughToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isStrikethrough) {
                 RichTextControl.SetStrikethrough(isStrikethrough);
             }
         });
-        
+        this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.leftJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -225,5 +239,10 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetSpellCheckingSupport(isSelected);
             }
         });
+    }
+    public  void KBSused() {
+        KBS.kbsTimesUsed++;
+        KBS.tbTimesClicked++;
+        System.out.println(KBS.kbsTimesUsed + " " + KBS.tbTimesClicked);
     }
 }
