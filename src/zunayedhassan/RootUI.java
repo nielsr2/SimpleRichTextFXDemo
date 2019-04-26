@@ -35,7 +35,6 @@ public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
     //*********************************************************************************************************************************************************************** P2
-    protected KBSManager kbsManager = new KBSManager();
     protected KBS KBS = new KBS();
     //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
@@ -56,7 +55,7 @@ public class RootUI extends BaseUI {
         this._initializeEvents();
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
-        this.setRight(kbsManager.initializeKBS());
+
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 

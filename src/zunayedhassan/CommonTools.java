@@ -3,12 +3,13 @@ package zunayedhassan;
 import java.io.InputStream;
 import java.util.Random;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Control;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
  */
 public class CommonTools extends Control {
     public static Stage PRIMARY_STAGE = null;
+    protected static KBSManager kbsManager = new KBSManager();
 
     public void SetStyleSheet(Scene scene, String styleClass) {
         scene.getStylesheets().add(this.getClass().getResource(styleClass).toExternalForm());
@@ -36,17 +38,37 @@ public class CommonTools extends Control {
     }
 
     public static Scene GET_SCENE_AND_INITIALIZE(Stage stage) {
+
         PRIMARY_STAGE = stage;
 
-        BaseUI root = new RootUI();
         Scene scene = null;
 
+        //****************************************************
+        Group groupRoot = new Group();
+        //****************************************************
+
+
         if (Settings.IS_SCENE_TRANSPARENT) {
-            scene = new Scene(root, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT, Color.TRANSPARENT);
+            scene = new Scene(groupRoot, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT, Color.TRANSPARENT);
         }
         else {
-            scene = new Scene(root, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+            scene = new Scene(groupRoot, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
         }
+
+        // setting up UI overlay
+        //****************************************************
+        BaseUI root = new RootUI();
+        root.setPrefSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+        //root.setStyle("-fx-border-color: red");
+
+        BorderPane overlayPane = new BorderPane();
+        overlayPane.setPrefSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+        //overlayPane.setStyle("-fx-border-color: red");
+
+        groupRoot.getChildren().addAll(overlayPane,root);
+
+        overlayPane.setRight(kbsManager.initializeKBS());
+        //****************************************************
 
         CommonTools tools = new CommonTools();
 

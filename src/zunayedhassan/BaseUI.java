@@ -20,6 +20,7 @@ import javafx.scene.layout.Pane;
  */
 public class BaseUI extends BorderPane {
     public static boolean IS_STYLESHEET_ALREADY_ADDED = false;
+
     
     public CommonTools Tools = new CommonTools();
     
