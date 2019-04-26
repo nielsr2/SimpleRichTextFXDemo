@@ -34,6 +34,7 @@ public class KBS extends Group {
     public Group displayKBS(){
         Group group = new Group();
 
+        // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
        // Rectangle backgroundRect = new Rectangle(170,50, Color.LIGHTGREY);
         Color grColor1 = new Color(0.5, 0.1, 0.9, 0.20);
         Color grColor2 = new Color(0.1, 0.7, 0.1, 0.20);
