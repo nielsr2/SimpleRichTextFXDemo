@@ -7,15 +7,18 @@ public class KBS {
     private boolean visible = false;
     protected int kbsTimesUsed = 0;
     protected int tbTimesClicked = 0;
-    private int nrOnList;
+    private String function;
     private boolean pinned;
-    public int KBStype[] = new int[5];
+    private String iconImage;
     KBS(){
 
     }
 
-    KBS(String oprSystem){
+    KBS(String oprSystem, String function){
         this.oprSystem = oprSystem;
+        this.function = function;
+
+
     }
 
     public Rectangle displayKBS(){
