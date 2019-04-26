@@ -37,20 +37,20 @@ public class RootUI extends BaseUI {
     public RichText RichTextControl = new RichText();
     //*********************************************************************************************************************************************************************** P2
     protected KBSManager kbsManager = new KBSManager();
-    protected KBS KBS = new KBS(0,0);
+    protected KBS KBS = new KBS();
     //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
-    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-bold.png");
-    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-italic.png");
-    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-underline.png");
-    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-strikethrough.png");
-    protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-left.png");
-    protected Button centerJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-center.png");
-    protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-right.png");
+    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Bicon.png"); //***************** P2
+    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Iicon.png"); //***************** P2
+    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Uicon.png"); //***************** P2
+    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Sicon.png"); //***************** P2
+    protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ALicon.png"); //***************** P2
+    protected Button centerJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ACicon.png"); //***************** P2
+    protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ARicon.png"); //***************** P2
     protected ColorPicker fontColorPicker = new ColorPicker(Color.BLACK);
-    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/tools-check-spelling.png");
+    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png"); //***************** P2
     
     public RootUI() {    
         this._initializeLayout();

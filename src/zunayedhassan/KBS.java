@@ -9,14 +9,15 @@ public class KBS {
     protected int tbTimesClicked = 0;
     private int nrOnList;
     private boolean pinned;
+    public int KBStype[] = new int[5];
     KBS(){
 
     }
 
-    KBS(int KBSused, int tbUsed) {KBSused = this.kbsTimesUsed; tbUsed = this.tbTimesClicked; }
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
+
     public Rectangle displayKBS(){
        return new Rectangle(100,100,100,50);
     }
