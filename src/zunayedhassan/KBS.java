@@ -6,7 +6,6 @@ import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -37,7 +36,7 @@ public class KBS extends Group {
         HBox content = new HBox(5);
         content.setPadding(new Insets(5,5,5,5));
 
-        ImageView imageView = new ImageView(new Image("zunayedhassan/SimpleRichTextFX/icons/edit-cut.png"));
+        ImageView imageView = new ImageView(new Image("zunayedhassan/SimpleRichTextFX/icons/oldIcons/edit-cut.png"));
         imageView.setFitWidth(40);
         imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
