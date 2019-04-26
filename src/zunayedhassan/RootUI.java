@@ -25,6 +25,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import zunayedhassan.SimpleRichTextFX.RichText;
 
+
 import static zunayedhassan.KBS.*;
 
 /**
@@ -40,15 +41,15 @@ public class RootUI extends BaseUI {
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
-    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-bold.png");
-    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-italic.png");
-    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-underline.png");
-    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/format-text-strikethrough.png");
-    protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-left.png");
-    protected Button centerJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-center.png");
-    protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/format-justify-right.png");
+    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Bicon.png"); //***************** P2
+    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Iicon.png"); //***************** P2
+    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Uicon.png"); //***************** P2
+    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Sicon.png"); //***************** P2
+    protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ALicon.png"); //***************** P2
+    protected Button centerJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ACicon.png"); //***************** P2
+    protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ARicon.png"); //***************** P2
     protected ColorPicker fontColorPicker = new ColorPicker(Color.BLACK);
-    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/tools-check-spelling.png");
+    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png"); //***************** P2
     
     public RootUI() {    
         this._initializeLayout();
@@ -61,7 +62,9 @@ public class RootUI extends BaseUI {
 
         //*********************************************************************************************************************************************************************** P2
     }
-    
+
+
+
     private ComboBox<String> _getFontsCombobox() {
         ComboBox<String> fontsCombobox = new ComboBox<>();
         List<String> fontsList = Font.getFamilies();
@@ -125,7 +128,6 @@ public class RootUI extends BaseUI {
         );
         
         this.setTop(this.RichTextToolBar);
-        
         this.scrollPane = new ScrollPane(this.RichTextControl);
         this.setCenter(this.RichTextControl);
         
@@ -164,9 +166,7 @@ public class RootUI extends BaseUI {
         this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                KBS.KBStype[0]++;
-                for(int i=0;i<KBS.KBStype.length;i++)//length is the property of array
-                System.out.println(KBS.KBStype[i]);
+            KBSused();
             }
         });
         this.italicToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
@@ -175,21 +175,36 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetItalic(isItalic);
             }
         });
-        
+        this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.underlineToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isUnderline) {
                 RichTextControl.SetUnderline(isUnderline);
             }
         });
-        
+        this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.strikethroughToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isStrikethrough) {
                 RichTextControl.SetStrikethrough(isStrikethrough);
             }
         });
-        
+        this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                KBSused();
+            }
+        });
         this.leftJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -224,5 +239,10 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetSpellCheckingSupport(isSelected);
             }
         });
+    }
+    public  void KBSused() {
+        KBS.kbsTimesUsed++;
+        KBS.tbTimesClicked++;
+        System.out.println(KBS.kbsTimesUsed + " " + KBS.tbTimesClicked);
     }
 }
