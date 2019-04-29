@@ -5,28 +5,19 @@
  */
 package zunayedhassan;
 
-import java.util.List;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Separator;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.ToolBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import zunayedhassan.SimpleRichTextFX.RichText;
 
-
-import static zunayedhassan.KBS.*;
+import java.util.List;
 
 /**
  *
@@ -136,6 +127,17 @@ public class RootUI extends BaseUI {
     }
     
     private void _initializeEvents() {
+
+// Mikkels event test ***********************************************
+        this.boldToggleButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                System.out.println("dasd");
+            }
+        });
+        //***********************************************************************
+
+
+
         this.scrollPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

@@ -1,29 +1,12 @@
 package zunayedhassan;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
-import javafx.scene.Group;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-//import javafx.scene.paint.Paint;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.SVGPath;
-import com.fxexperience.javafx.animation.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
-import static javafx.geometry.Pos.*;
+import static javafx.geometry.Pos.BOTTOM_RIGHT;
+
+//import javafx.scene.paint.Paint;
 
 // import com.fx.javafx.util;
 
@@ -31,6 +14,8 @@ public class KBSManager {
 //    SVGPath OUR = this._init();
 // TODO MAKE KBS-ARRAY;
     KBSManager(){
+
+
 //        this._init();
 //        this._initializeEvents();
         // this.OUR.stroke(new Paint());
@@ -76,6 +61,21 @@ public class KBSManager {
         kbsPane.setAlignment(BOTTOM_RIGHT);
         //kbsPane.setStyle("-fx-border-color: red");
         kbsPane.getChildren().addAll ( kbs.displayKBS());
+
+        kbs.fade(0.1, 3000);
+        System.out.println("ddede");
+
+
+        //fade.play());
+
+/*
+        this.scrollPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                RichTextControl.requestFocus();
+            }
+ */
+        ;
 
         return kbsPane;
     }

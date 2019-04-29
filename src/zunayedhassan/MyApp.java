@@ -5,10 +5,8 @@
  */
 package zunayedhassan;
 
-        import javafx.application.Application;
-        import javafx.event.EventHandler;
-        import javafx.scene.input.KeyEvent;
-        import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
 /**
  *
@@ -19,6 +17,8 @@ public class MyApp extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setScene(CommonTools.GET_SCENE_AND_INITIALIZE(primaryStage));
         primaryStage.show();
+
+
     }
 
     /**
