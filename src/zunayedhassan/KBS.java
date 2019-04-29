@@ -12,7 +12,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-
+// elizabete somethign
 public class KBS {
     private String oprSystem;
     private boolean visible = false;
@@ -45,6 +45,7 @@ public class KBS {
         LinearGradient lg1 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stops);
         Rectangle backgroundRect = new Rectangle(170,50);
         backgroundRect.setFill(lg1);
+
 
 
         HBox content = new HBox(5);
