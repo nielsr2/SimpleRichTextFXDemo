@@ -12,7 +12,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-// elizabete somethign2
+
 public class KBS {
     private String oprSystem;
     private boolean visible = false;
@@ -38,15 +38,36 @@ public class KBS {
 
         // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
         // Rectangle backgroundRect = new Rectangle(170,50, Color.LIGHTGREY);
-        Color grColor1 = new Color(0.5, 0.5, 0.5, 0.30);
-        Color grColor2 = new Color(0.7, 0.7, 0.7, 0.15);
+        Color grColorGrey1 = new Color(0.5, 0.5, 0.5, 0.30);
+        Color grColorGrey2 = new Color(0.7, 0.7, 0.7, 0.15);
 
-        Stop[] stops = new Stop[] { new Stop(0, grColor1), new Stop(1, grColor2)};
-        LinearGradient lg1 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stops);
-        Rectangle backgroundRect = new Rectangle(170,50);
-        backgroundRect.setFill(lg1);
+        Color grColorRed1 = new Color(0.5, 0, 0, 0.70);
+        Color grColorRed2 = new Color(0.5, 0, 0, 0.30);
+
+        Color grColorYellow1 = new Color(0.9, 0.7, 0, 0.70);
+        Color grColorYellow2 = new Color(0.9, 0.7, 0, 0.30);
+
+        Color grColorGreen1 = new Color(0.2, 0.6, 0, 0.70);
+        Color grColorGreen2 = new Color(0.2, 0.6, 0, 0.30);
 
 
+        // Stop[] stopsRed = new Stop[] { new Stop(0, grColorRed1), new Stop(1, grColorRed2)};
+        // LinearGradient lg1 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stopsRed);
+
+        // Stop[] stopsYellow = new Stop[] { new Stop(0, grColorYellow1), new Stop(1, grColorYellow2)};
+        // LinearGradient lg2 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stopsYellow);
+
+        Stop[] stopsGreen = new Stop[] { new Stop(0, grColorGreen1), new Stop(1, grColorGreen2)};
+        LinearGradient lg3 = new LinearGradient(1, 0, 0, 0, true, CycleMethod.NO_CYCLE, stopsGreen);
+
+
+        // Rectangle backgroundRect = new Rectangle(170,50);
+        // Rectangle backgroundRect1 = new Rectangle(170,50);
+        Rectangle backgroundRect2 = new Rectangle(170,50);
+
+        // backgroundRect.setFill(lg1);
+        // backgroundRect1.setFill(lg2);
+        backgroundRect2.setFill(lg3);
 
         HBox content = new HBox(5);
         content.setPadding(new Insets(5,5,5,5));
@@ -62,14 +83,10 @@ public class KBS {
 
         content.getChildren().addAll(imageView, shortcut);
 
-        group.getChildren().addAll(backgroundRect, content);
+        // group.getChildren().addAll(backgroundRect, content);
+        // group.getChildren().addAll(backgroundRect1, content);
+        group.getChildren().addAll(backgroundRect2, content);
+
         return group;
     }
-
-
-
-
-
-
-
 }
