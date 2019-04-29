@@ -29,7 +29,7 @@ import static javafx.geometry.Pos.*;
 
 public class KBSManager {
 //    SVGPath OUR = this._init();
-// TODO MAKE KBS-ARRAY;
+    KBS[] KBS = new KBS[20];
     KBSManager(){
 //        this._init();
 //        this._initializeEvents();

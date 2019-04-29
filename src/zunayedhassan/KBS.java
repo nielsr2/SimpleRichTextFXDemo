@@ -28,7 +28,13 @@ public class KBS {
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
-    // TODO MOVE VENTEGODT FUNCTION HERE
+
+    public  void KBSused() {
+        this.kbsTimesUsed++;
+        this.tbTimesClicked++;
+        System.out.println(this.kbsTimesUsed + " " + this.tbTimesClicked);
+    }
+
   //  public Rectangle displayKBS(){
   //     return new Rectangle(100,100,100,50);
    // }
@@ -65,7 +71,6 @@ public class KBS {
         group.getChildren().addAll(backgroundRect, content);
         return group;
     }
-
 
 
 
