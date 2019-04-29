@@ -144,14 +144,14 @@ public class RootUI extends BaseUI {
                 RichTextControl.requestFocus();
             }
         });
-        
+
         this.fontsCombobox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String choosenFont) {
                 RichTextControl.SetFont(choosenFont);
             }
         });
-        
+
         this.fontSizeComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String fontSizeAsText) {
@@ -159,7 +159,7 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetFontSize(fontSize);
             }
         });
-        
+
         this.boldToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isBold) {
@@ -192,34 +192,35 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetLeftJustify();
             }
         });
-        
+
         this.centerJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 RichTextControl.SetCenterJustify();
             }
         });
-        
+
         this.rightJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 RichTextControl.SetRightJustify();
             }
         });
-        
+
         this.fontColorPicker.valueProperty().addListener(new ChangeListener<Color>() {
             @Override
             public void changed(ObservableValue<? extends Color> observable, Color oldValue, Color choosenColor) {
                 RichTextControl.SetColor(choosenColor);
             }
         });
-        
+
         this.spellCheckToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isSelected) {
                 RichTextControl.SetSpellCheckingSupport(isSelected);
             }
         });
+    }
 
     void SetUpListenersfortbubbbnbb(){
 
