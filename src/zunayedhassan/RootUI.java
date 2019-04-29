@@ -36,7 +36,7 @@ public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
     //*********************************************************************************************************************************************************************** P2
-    protected KBS KBS = new KBS();
+    protected KBS[] KBSArray = new KBS[20];
     //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
@@ -60,6 +60,9 @@ public class RootUI extends BaseUI {
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 
         //*********************************************************************************************************************************************************************** P2
+        for(int i=0; i<KBSArray.length; i++) {
+            KBSArray[i] = new KBS();
+        }
     }
 
 
@@ -135,7 +138,6 @@ public class RootUI extends BaseUI {
         
         scrollPane.setFitToWidth(true);
     }
-    
     private void _initializeEvents() {
         this.scrollPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -143,14 +145,14 @@ public class RootUI extends BaseUI {
                 RichTextControl.requestFocus();
             }
         });
-        
+
         this.fontsCombobox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String choosenFont) {
                 RichTextControl.SetFont(choosenFont);
             }
         });
-        
+
         this.fontSizeComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String fontSizeAsText) {
@@ -158,29 +160,18 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetFontSize(fontSize);
             }
         });
-        
+
         this.boldToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isBold) {
                 RichTextControl.SetBold(isBold);
             }
         });
-        this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-            KBSused();
-            }
-        });
+
         this.italicToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isItalic) {
                 RichTextControl.SetItalic(isItalic);
-            }
-        });
-        this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                KBSused();
             }
         });
         this.underlineToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
@@ -189,52 +180,41 @@ public class RootUI extends BaseUI {
                 RichTextControl.SetUnderline(isUnderline);
             }
         });
-        this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                KBSused();
-            }
-        });
         this.strikethroughToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isStrikethrough) {
                 RichTextControl.SetStrikethrough(isStrikethrough);
             }
         });
-        this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                KBSused();
-            }
-        });
+
         this.leftJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 RichTextControl.SetLeftJustify();
             }
         });
-        
+
         this.centerJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 RichTextControl.SetCenterJustify();
             }
         });
-        
+
         this.rightJustfyToggleButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 RichTextControl.SetRightJustify();
             }
         });
-        
+
         this.fontColorPicker.valueProperty().addListener(new ChangeListener<Color>() {
             @Override
             public void changed(ObservableValue<? extends Color> observable, Color oldValue, Color choosenColor) {
                 RichTextControl.SetColor(choosenColor);
             }
         });
-        
+
         this.spellCheckToggleButton.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean isSelected) {
@@ -242,9 +222,40 @@ public class RootUI extends BaseUI {
             }
         });
     }
-    public  void KBSused() {
-        KBS.kbsTimesUsed++;
-        KBS.tbTimesClicked++;
-        System.out.println(KBS.kbsTimesUsed + " " + KBS.tbTimesClicked);
+
+    void SetUpListenersfortbubbbnbb(){
+
+        this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int bold = 0;
+                KBSArray[bold].KBSused();
+            }
+        });
+
+        this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int italic = 1;
+                KBSArray[italic].KBSused();
+            }
+        });
+
+        this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int underline = 2;
+                KBSArray[underline].KBSused();
+            }
+        });
+
+        this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int strikethrough = 3;
+                KBSArray[strikethrough].KBSused();
+            }
+        });
+
     }
 }
