@@ -41,15 +41,15 @@ public class RootUI extends BaseUI {
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
-    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Bicon.png"); //***************** P2
-    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Iicon.png"); //***************** P2
-    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Uicon.png"); //***************** P2
-    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Sicon.png"); //***************** P2
+    protected ToggleButton boldToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Bicon.png", "bold"); //***************** P2
+    protected ToggleButton italicToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Iicon.png", "italic"); //***************** P2
+    protected ToggleButton underlineToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Uicon.png", "underline"); //***************** P2
+    protected ToggleButton strikethroughToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/Sicon.png", "strikethrough"); //***************** P2
     protected Button leftJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ALicon.png", "justLeft"); //***************** P2
     protected Button centerJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ACicon.png", "justCenter"); //***************** P2
     protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ARicon.png", "justRight"); //***************** P2
     protected ColorPicker fontColorPicker = new ColorPicker(Color.BLACK);
-    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png"); //***************** P2
+    protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png", "spellcheck"); //***************** P2
     
     public RootUI() {    
         this._initializeLayout();
@@ -92,8 +92,9 @@ public class RootUI extends BaseUI {
         return fontSize;
     }
     
-    private ToggleButton _getIconToggleButton(String icon) {
+    private ToggleButton _getIconToggleButton(String icon, String id) { // added id param
         ToggleButton toggleButton = new ToggleButton();
+        toggleButton.setId(id); // ******************************************** P2
         toggleButton.setGraphic(new ImageView(new Image(this.getClass().getResourceAsStream(icon))));
         
         return toggleButton;
@@ -108,7 +109,7 @@ public class RootUI extends BaseUI {
     //*********************************************************************************************************************************************************************** P2
     private Button _getIconButton(String icon, String id) { //******************************************** added String for ID
         Button button = new Button();
-        button.setId(id); // ********************************************
+        button.setId(id); // ******************************************** P2
         button.setGraphic(new ImageView(new Image(this.getClass().getResourceAsStream(icon))));
         
         return button;
