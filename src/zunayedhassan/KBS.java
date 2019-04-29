@@ -17,7 +17,7 @@ public class KBS {
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
-
+    // TODO MOVE VENTEGODT FUNCTION HERE
     public Rectangle displayKBS(){
        return new Rectangle(100,100,100,50);
     }
