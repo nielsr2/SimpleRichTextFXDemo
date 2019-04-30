@@ -17,7 +17,7 @@ public class OurGroup extends Group {
         km.toFront();
         overlayPane.setRight(km);
 
-        km.kbsArray[0].fade(0, 3).play();
+        km.kbsArray[0].fade(0.1, 3).play();
 
 
 

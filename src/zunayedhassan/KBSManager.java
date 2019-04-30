@@ -3,38 +3,30 @@ package zunayedhassan;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 
+import static javafx.geometry.Orientation.VERTICAL;
 import static javafx.geometry.Pos.BOTTOM_RIGHT;
 
-//import javafx.scene.paint.Paint;
-
-// import com.fx.javafx.util;
 
 public class KBSManager extends FlowPane {
 
-    //    SVGPath OUR = this._init();
     KBS[] kbsArray = new KBS[20];
-    KBSManager(){
+
+    KBSManager() {
 
         for (int i = 0; i < kbsArray.length; i++) {
 
         }
         kbsArray[0] = new KBS("Ctrl + X", "zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/CutIconHR.png");
         kbsArray[1] = new KBS("Ctrl + 2", "zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/BiconHR.png");
-//        this._init();
-//        this._initializeEvents();
-        // this.OUR.stroke(new Paint());
-        // this.setOrientation(VERTICAL);
+
+        this.setOrientation(VERTICAL);
         this.setPadding(new Insets(5, 5, 5, 5));
         this.setVgap(5);
         this.setStyle("-fx-border-color: black");
         this.setAlignment(BOTTOM_RIGHT);
-        //kbsPane.setStyle("-fx-border-color: red");
-        //String path = "M 100 100 L 300 100 L 200 200 L 0 200 z";
-        //SVGPath svgpath = new SVGPath();
-        //svgpath.setContent(path);
 
-//        this.getChildren().addAll(kbs.displayKBS());
-        this.getChildren().addAll(kbsArray[0],kbsArray[1]);
+        this.getChildren().addAll(kbsArray[0], kbsArray[1]);
+
 
     }
 //    private SVGPath _init() {

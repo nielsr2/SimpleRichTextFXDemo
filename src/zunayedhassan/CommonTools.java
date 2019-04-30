@@ -1,21 +1,20 @@
 package zunayedhassan;
 
-import java.io.InputStream;
-import java.util.Random;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Control;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.InputStream;
+import java.util.Random;
+
 /**
- *
  * @author Zunayed Hassan
  */
 public class CommonTools extends Control {
@@ -37,7 +36,7 @@ public class CommonTools extends Control {
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream(icon)));
     }
 
-//    KBSManager kbsManager = new KBSManager();
+    //    KBSManager kbsManager = new KBSManager();
     public static Scene GET_SCENE_AND_INITIALIZE(Stage stage) {
         PRIMARY_STAGE = stage;
 
@@ -50,8 +49,7 @@ public class CommonTools extends Control {
 
         if (Settings.IS_SCENE_TRANSPARENT) {
             scene = new Scene(groupRoot, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT, Color.TRANSPARENT);
-        }
-        else {
+        } else {
             scene = new Scene(groupRoot, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
         }
 
@@ -80,23 +78,23 @@ public class CommonTools extends Control {
 
         return scene;
     }
-    
+
     public static Background GET_BACKGROUND(Color color) {
         return new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY));
     }
-    
+
     public static Color GET_RANDOM_COLOR() {
         Random random = new Random();
-        
+
         int red = random.nextInt(255);
         int green = random.nextInt(255);
         int blue = random.nextInt(255);
-        
+
         Color randomColor = Color.rgb(red, green, blue);
-        
+
         return randomColor;
     }
-    
+
     public static Background GET_RANDOM_BACKGROUND() {
         return GET_BACKGROUND(GET_RANDOM_COLOR());
     }

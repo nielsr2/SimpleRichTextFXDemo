@@ -20,15 +20,12 @@ import zunayedhassan.SimpleRichTextFX.RichText;
 import java.util.List;
 
 /**
- *
  * @author Zunayed Hassan
  */
 public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
-//    //*********************************************************************************************************************************************************************** P2
-//    protected KBS[] KBSArray = new KBS[20];
-//    //*********************************************************************************************************************************************************************** P2
+
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
@@ -43,20 +40,10 @@ public class RootUI extends BaseUI {
     protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png", "spellcheck"); //***************** P2
 
 
-    public RootUI() {    
+    public RootUI() {
         this._initializeLayout();
         this._initializeEvents();
-        //*********************************************************************************************************************************************************************** P2
-        //this.setBottom(kbsManager.OUR);
-//        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
-//        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
-
-        //*********************************************************************************************************************************************************************** P2
-
     }
-
-
-
 
 
     private ComboBox<String> _getFontsCombobox() {
@@ -66,29 +53,30 @@ public class RootUI extends BaseUI {
 
         int defaultFontIndex = fontsList.indexOf("Times New Roman"); //************************* P2 changes
         fontsCombobox.getSelectionModel().select(defaultFontIndex);
-        
+
         return fontsCombobox;
     }
-    
+
     private ComboBox<String> _getFontSizeComboBox() {
         ComboBox<String> fontSize = new ComboBox<>();
-        
+
         fontSize.getItems().addAll(
                 "8", "10", "12", "14", "16", "18", "20", "22", "24", "36", "48", "72"
         );
-        
+
         fontSize.getSelectionModel().select(2);
-        
+
         return fontSize;
     }
-    
+
     private ToggleButton _getIconToggleButton(String icon, String id) { // added id param
         ToggleButton toggleButton = new ToggleButton();
         toggleButton.setId(id); // ******************************************** P2
         toggleButton.setGraphic(new ImageView(new Image(this.getClass().getResourceAsStream(icon))));
-        
+
         return toggleButton;
     }
+
     //*********************************************************************************************************************************************************************** P2
 //    private ToggleButton _getIconToggleButton(String icon, String name) {
 //        ToggleButton toggleButton = new ToggleButton(name);
@@ -101,10 +89,10 @@ public class RootUI extends BaseUI {
         Button button = new Button();
         button.setId(id); // ******************************************** P2
         button.setGraphic(new ImageView(new Image(this.getClass().getResourceAsStream(icon))));
-        
+
         return button;
     }
-    
+
     private void _initializeLayout() {
         this.RichTextToolBar.getItems().addAll(
                 this.fontsCombobox,
@@ -122,25 +110,18 @@ public class RootUI extends BaseUI {
                 this.fontColorPicker,
                 this.spellCheckToggleButton
         );
-        
+
         this.setTop(this.RichTextToolBar);
         this.RichTextToolBar.setStyle("-fx-border-color: red");
 
         this.scrollPane = new ScrollPane(this.RichTextControl);
         this.RichTextControl.setStyle("-fx-border-color: blue");
         this.setCenter(this.RichTextControl);
-        
+
         scrollPane.setFitToWidth(true);
     }
-    private void _initializeEvents() {
 
-// Mikkels event test ***********************************************
-        this.boldToggleButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                System.out.println("dasd");
-            }
-        });
-        //***********************************************************************
+    private void _initializeEvents() {
 
 
         this.scrollPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
