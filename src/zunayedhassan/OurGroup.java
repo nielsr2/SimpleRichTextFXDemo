@@ -16,7 +16,7 @@ public class OurGroup extends Group {
         //overlayPane.setStyle("-fx-border-color: red");
         this.getChildren().addAll(overlayPane,root);
 //        this.getChildren().addAll(root);
-//        overlayPane.toFront();
+        km.toFront();
         overlayPane.setRight(km);
 
     }

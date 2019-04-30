@@ -648,7 +648,7 @@ public class RichText extends VBox {
                         }
                     }
                 }
-                // [Ctrl]
+//                // [Ctrl]
 //                 if (event.getCode() == KeyCode.CONTROL) {
 //                    _isShortcutKeyPressed = true;
 //                    System.out.println("SHORTCUT DOWN!!!!");
