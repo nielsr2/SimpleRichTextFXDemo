@@ -1,5 +1,7 @@
 package zunayedhassan;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -12,6 +14,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class KBS {
     private String oprSystem;
@@ -21,6 +24,11 @@ public class KBS {
     private int nrOnList;
     private boolean pinned;
     public int KBStype[] = new int[5];
+
+    private double opacity = 1;
+
+    KBS(){
+
 
     /** colors for the gradient */
     // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
@@ -116,4 +124,29 @@ public class KBS {
 
         return group;
     }
+
+    public void fade(double opacityEnd, double time) {
+
+        double opacityStart = this.opacity;
+
+        Rectangle rect = new Rectangle(100, 100, Color.BLACK);
+
+        FadeTransition fade = new FadeTransition(Duration.millis(time), rect);
+        fade.setFromValue(opacityStart);
+        fade.setToValue(opacityEnd);
+        fade.setCycleCount(Timeline.INDEFINITE);
+        fade.setAutoReverse(true);
+        fade.play(); //start animation
+
+        //this.setOnMousePressed(e -> System.out.println("adasfdf"));
+
+
+    }
+
+
+
+
+
+
+
 }
