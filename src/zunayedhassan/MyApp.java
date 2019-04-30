@@ -38,6 +38,7 @@ public class MyApp extends Application {
         primaryStage.getScene().addMnemonic(mn4);
 //        primaryStage.getScene().addMnemonic(mn);
     }
+
     /**
      * @param args the command line arguments
      */
