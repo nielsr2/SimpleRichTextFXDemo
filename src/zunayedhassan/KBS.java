@@ -28,10 +28,16 @@ public class KBS {
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
-    // TODO MOVE VENTEGODT FUNCTION HERE
-  //  public Rectangle displayKBS(){
-  //     return new Rectangle(100,100,100,50);
-   // }
+
+    public  void KBSused() {
+        this.kbsTimesUsed++;
+        this.tbTimesClicked++;
+        System.out.println(this.kbsTimesUsed + " " + this.tbTimesClicked);
+    }
+
+    //  public Rectangle displayKBS(){
+    //     return new Rectangle(100,100,100,50);
+    // }
 
     public Group displayKBS(){
         Group group = new Group();
