@@ -1,7 +1,5 @@
 package zunayedhassan;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 
@@ -17,6 +15,7 @@ public class KBSManager extends FlowPane {
     //    SVGPath OUR = this._init();
     KBS[] kbsArray = new KBS[20];
     KBSManager(){
+
         for (int i = 0; i < kbsArray.length; i++) {
 
         }

@@ -1,7 +1,6 @@
 package zunayedhassan;
 
 import javafx.animation.FadeTransition;
-import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -49,7 +48,13 @@ public class KBS extends Group {
 
         content.getChildren().addAll(icon, this.shortcut);
 
+
         this.getChildren().addAll(backgroundRect, content);
+        //.fade(0.1,2).play();
+        this.setOnMouseMoved(event -> {
+            System.out.println("test");
+        });
+
 
         /** colors for the gradient */
         // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
@@ -117,20 +122,19 @@ public class KBS extends Group {
     }
 
 
-
-
-    public void fade(double opacityEnd, double time) {
+    public FadeTransition fade(double opacityEnd, double time) {
 
         double opacityStart = this.opacity;
 
-        Rectangle rect = new Rectangle(100, 100, Color.BLACK);
 
-        FadeTransition fade = new FadeTransition(Duration.millis(time), rect);
+        FadeTransition fade = new FadeTransition(Duration.seconds(time), this);
         fade.setFromValue(opacityStart);
         fade.setToValue(opacityEnd);
-        fade.setCycleCount(Timeline.INDEFINITE);
-        fade.setAutoReverse(true);
+        //fade.setCycleCount(Timeline.INDEFINITE);
+        //fade.setAutoReverse(true);
         fade.play(); //start animation
+
+        return fade;
 
         //this.setOnMousePressed(e -> System.out.println("adasfdf"));
 

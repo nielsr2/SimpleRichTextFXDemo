@@ -1,8 +1,6 @@
 package zunayedhassan;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 
 public class OurGroup extends Group {
@@ -19,5 +17,11 @@ public class OurGroup extends Group {
         km.toFront();
         overlayPane.setRight(km);
 
+        km.kbsArray[0].fade(0, 3).play();
+
+
+
+
     }
+
 }
