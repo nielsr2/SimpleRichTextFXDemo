@@ -16,7 +16,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class KBS {
+public class KBS extends Group {
     private String oprSystem;
     private boolean visible = false;
     protected int kbsTimesUsed = 0;
@@ -26,9 +26,30 @@ public class KBS {
     public int KBStype[] = new int[5];
 
     private double opacity = 1;
+    Rectangle backgroundRect;
+    ImageView icon;
+    Text shortcut;
+    KBS(String shortcut, String iconPath) {
 
-    KBS() {
 
+        // initial rectangle
+        backgroundRect = new Rectangle(170, 50, Color.LIGHTGREY);
+
+        HBox content = new HBox(5);
+        content.setPadding(new Insets(5,5,5,5));
+
+        icon = new ImageView(new Image(iconPath));
+        icon.setFitWidth(40);
+        icon.setPreserveRatio(true);
+        icon.setSmooth(true);
+        icon.setCache(true);
+
+        this.shortcut = new Text(shortcut);
+        this.shortcut.setFont(new Font(30));
+
+        content.getChildren().addAll(icon, this.shortcut);
+
+        this.getChildren().addAll(backgroundRect, content);
 
         /** colors for the gradient */
         // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
@@ -96,33 +117,7 @@ public class KBS {
     }
 
 
-    public Group displayKBS(){
-        Group group = new Group();
 
-        // initial rectangle
-        Rectangle backgroundRect = new Rectangle(170, 50, Color.LIGHTGREY);
-
-        HBox content = new HBox(5);
-        content.setPadding(new Insets(5,5,5,5));
-
-        ImageView imageView = new ImageView(new Image("zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/CutIconHR.png"));
-        imageView.setFitWidth(40);
-        imageView.setPreserveRatio(true);
-        imageView.setSmooth(true);
-        imageView.setCache(true);
-
-        Text shortcut = new Text("Ctrl + X");
-        shortcut.setFont(new Font(30));
-
-        content.getChildren().addAll(imageView, shortcut);
-
-        group.getChildren().addAll(backgroundRect, content);
-        // group.getChildren().addAll(backgroundRectRed, content);
-        // group.getChildren().addAll(backgroundRectYellow, content);
-        // group.getChildren().addAll(backgroundRectGreen, content);
-
-        return group;
-    }
 
     public void fade(double opacityEnd, double time) {
 

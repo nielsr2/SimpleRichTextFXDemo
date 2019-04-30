@@ -1,5 +1,7 @@
 package zunayedhassan;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 
@@ -16,8 +18,10 @@ public class KBSManager extends FlowPane {
     KBS[] kbsArray = new KBS[20];
     KBSManager(){
         for (int i = 0; i < kbsArray.length; i++) {
-            kbsArray[i] = new KBS();
+
         }
+        kbsArray[0] = new KBS("Ctrl + X", "zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/CutIconHR.png");
+        kbsArray[1] = new KBS("Ctrl + 2", "zunayedhassan/SimpleRichTextFX/icons/newIconsPNG/BiconHR.png");
 //        this._init();
 //        this._initializeEvents();
         // this.OUR.stroke(new Paint());
@@ -32,7 +36,7 @@ public class KBSManager extends FlowPane {
         //svgpath.setContent(path);
 
 //        this.getChildren().addAll(kbs.displayKBS());
-        this.getChildren().addAll(kbsArray[0].displayKBS(), kbsArray[1].displayKBS());
+        this.getChildren().addAll(kbsArray[0],kbsArray[1]);
 
     }
 //    private SVGPath _init() {
@@ -66,5 +70,39 @@ public class KBSManager extends FlowPane {
 //            }
 //        });
 //    }
-
+//void setupToolbarListeners(){
+//
+//    parent.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+//        @Override
+//        public void handle(ActionEvent event) {
+//            int bold = 0;
+//            KBSArray[bold].KBSused();
+//        }
+//    });
+//
+//    this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+//        @Override
+//        public void handle(ActionEvent event) {
+//            int italic = 1;
+//            KBSArray[italic].KBSused();
+//        }
+//    });
+//
+//    this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+//        @Override
+//        public void handle(ActionEvent event) {
+//            int underline = 2;
+//            KBSArray[underline].KBSused();
+//        }
+//    });
+//
+//    this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
+//        @Override
+//        public void handle(ActionEvent event) {
+//            int strikethrough = 3;
+//            KBSArray[strikethrough].KBSused();
+//        }
+//    });
+//
+//}
 }
