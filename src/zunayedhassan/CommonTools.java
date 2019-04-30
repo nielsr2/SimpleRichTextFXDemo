@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  */
 public class CommonTools extends Control {
     public static Stage PRIMARY_STAGE = null;
-    protected static KBSManager kbsManager = new KBSManager();
+
 
     public void SetStyleSheet(Scene scene, String styleClass) {
         scene.getStylesheets().add(this.getClass().getResource(styleClass).toExternalForm());
@@ -37,14 +37,14 @@ public class CommonTools extends Control {
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream(icon)));
     }
 
+//    KBSManager kbsManager = new KBSManager();
     public static Scene GET_SCENE_AND_INITIALIZE(Stage stage) {
-
         PRIMARY_STAGE = stage;
 
         Scene scene = null;
 
         //****************************************************
-        Group groupRoot = new Group();
+        OurGroup groupRoot = new OurGroup();
         //****************************************************
 
 
@@ -58,16 +58,11 @@ public class CommonTools extends Control {
         // setting up UI overlay
         //****************************************************
         BaseUI root = new RootUI();
-        root.setPrefSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+//        KBSManager km = root.getChildren();
+//        root.setPrefSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
         //root.setStyle("-fx-border-color: red");
 
-        BorderPane overlayPane = new BorderPane();
-        overlayPane.setPrefSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
-        //overlayPane.setStyle("-fx-border-color: red");
 
-        groupRoot.getChildren().addAll(overlayPane,root);
-
-        overlayPane.setRight(kbsManager.initializeKBS());
         //****************************************************
 
         CommonTools tools = new CommonTools();

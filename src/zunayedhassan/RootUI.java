@@ -35,6 +35,7 @@ import static zunayedhassan.KBS.*;
 public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
+    public KBSManager km = new KBSManager();
     //*********************************************************************************************************************************************************************** P2
     protected KBS[] KBSArray = new KBS[20];
     //*********************************************************************************************************************************************************************** P2
@@ -50,10 +51,12 @@ public class RootUI extends BaseUI {
     protected Button rightJustfyToggleButton = this._getIconButton("SimpleRichTextFX/icons/newIconsPNG/ARicon.png", "justRight"); //***************** P2
     protected ColorPicker fontColorPicker = new ColorPicker(Color.BLACK);
     protected ToggleButton spellCheckToggleButton = this._getIconToggleButton("SimpleRichTextFX/icons/newIconsPNG/SCicon.png", "spellcheck"); //***************** P2
-    
+
+
     public RootUI() {    
         this._initializeLayout();
         this._initializeEvents();
+        this.getChildren().addAll(km);
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);

@@ -35,9 +35,11 @@ import javax.imageio.stream.FileImageInputStream;
  * @author ZUNAYED_PC
  */
 public class RichText extends VBox {
+
     private Caret _caret = new Caret(12);
     private boolean _isCtrlKeyPressed = false;
     private boolean _isShiftKeyPressed = false;
+    private boolean _isShortcutKeyPressed = false;
     private Clipboard _clipboard = Clipboard.getSystemClipboard();
     private boolean _isSpellCheckOn = false;
     private ArrayList<String> _dictionary = new ArrayList<>();
@@ -60,6 +62,7 @@ public class RichText extends VBox {
     public Color CurrentColor = Color.BLACK;
     
     public RichText() {
+        this.setId("richText"); //************* P2
         this.AddLine();
         this.setCursor(Cursor.TEXT);
         
@@ -646,6 +649,15 @@ public class RichText extends VBox {
                     }
                 }
                 // [Ctrl]
+                 if (event.getCode() == KeyCode.CONTROL) {
+                    _isShortcutKeyPressed = true;
+                    System.out.println("SHORTCUT DOWN!!!!");
+                     System.out.println(event.getCharacter());
+                 }
+                 if (_isShortcutKeyPressed && (event.getCharacter() == "b")) {
+                    System.out.println("BOLLLLLLDDDD");
+                    SetBold(IsCurrentFontBold);
+                }
                 else if (event.getCode() == KeyCode.CONTROL) {
                     _isCtrlKeyPressed = true;
                 }
@@ -1037,7 +1049,7 @@ public class RichText extends VBox {
     }
     
     public void ApplyCopy() {
-        if (IsAnythingSelected()) {
+        if (IsAnythingSelected()) { //TODO DANIEL, IS THIS VARIABLE SOMETHING WE CAN USE?
             String text = GetSelectedText();
             ClipboardContent content = new ClipboardContent();
             content.putString(text);
