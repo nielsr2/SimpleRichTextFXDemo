@@ -35,7 +35,7 @@ public class KBSManager extends FlowPane {
 //        this._init();
 //        this._initializeEvents();
         // this.OUR.stroke(new Paint());
-        this.setOrientation(VERTICAL);
+       // this.setOrientation(VERTICAL);
         this.setPadding(new Insets(5, 5, 5, 5));
         this.setVgap(5);
         this.setStyle("-fx-border-color: black");
