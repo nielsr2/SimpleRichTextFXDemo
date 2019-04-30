@@ -2,7 +2,6 @@ package zunayedhassan;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.shape.SVGPath;
 
 import static javafx.geometry.Orientation.VERTICAL;
 import static javafx.geometry.Pos.BOTTOM_RIGHT;
@@ -14,8 +13,11 @@ import static javafx.geometry.Pos.BOTTOM_RIGHT;
 public class KBSManager extends FlowPane {
 
     //    SVGPath OUR = this._init();
-    KBS[] KBS = new KBS[20];
+    KBS[] kbsArray = new KBS[20];
     KBSManager(){
+        for (int i = 0; i < kbsArray.length; i++) {
+            kbsArray[i] = new KBS();
+        }
 //        this._init();
 //        this._initializeEvents();
         // this.OUR.stroke(new Paint());
@@ -25,12 +27,13 @@ public class KBSManager extends FlowPane {
         this.setStyle("-fx-border-color: black");
         this.setAlignment(BOTTOM_RIGHT);
         //kbsPane.setStyle("-fx-border-color: red");
-        String path = "M 100 100 L 300 100 L 200 200 L 0 200 z";
-        SVGPath svgpath = new SVGPath();
-        svgpath.setContent(path);
+        //String path = "M 100 100 L 300 100 L 200 200 L 0 200 z";
+        //SVGPath svgpath = new SVGPath();
+        //svgpath.setContent(path);
 
 //        this.getChildren().addAll(kbs.displayKBS());
-        this.getChildren().addAll(svgpath);
+        this.getChildren().addAll(kbsArray[0].displayKBS(), kbsArray[1].displayKBS());
+
     }
 //    private SVGPath _init() {
 ////        String path = "M 100 100 L 300 100 L 200 200 L 0 200 z";

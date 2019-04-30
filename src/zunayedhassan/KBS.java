@@ -100,7 +100,7 @@ public class KBS {
         Group group = new Group();
 
         // initial rectangle
-        // Rectangle backgroundRect = new Rectangle(170,50, Color.LIGHTGREY);
+        Rectangle backgroundRect = new Rectangle(170, 50, Color.LIGHTGREY);
 
         HBox content = new HBox(5);
         content.setPadding(new Insets(5,5,5,5));
@@ -116,7 +116,7 @@ public class KBS {
 
         content.getChildren().addAll(imageView, shortcut);
 
-        // group.getChildren().addAll(backgroundRectGrey, content);
+        group.getChildren().addAll(backgroundRect, content);
         // group.getChildren().addAll(backgroundRectRed, content);
         // group.getChildren().addAll(backgroundRectYellow, content);
         // group.getChildren().addAll(backgroundRectGreen, content);

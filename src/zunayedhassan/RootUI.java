@@ -26,7 +26,6 @@ import java.util.List;
 public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
-    public KBSManager km = new KBSManager();
     //*********************************************************************************************************************************************************************** P2
     protected KBS[] KBSArray = new KBS[20];
     //*********************************************************************************************************************************************************************** P2
@@ -47,7 +46,6 @@ public class RootUI extends BaseUI {
     public RootUI() {    
         this._initializeLayout();
         this._initializeEvents();
-        this.getChildren().addAll(km);
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
@@ -128,7 +126,10 @@ public class RootUI extends BaseUI {
         );
         
         this.setTop(this.RichTextToolBar);
+        this.RichTextToolBar.setStyle("-fx-border-color: red");
+
         this.scrollPane = new ScrollPane(this.RichTextControl);
+        this.RichTextControl.setStyle("-fx-border-color: blue");
         this.setCenter(this.RichTextControl);
         
         scrollPane.setFitToWidth(true);
