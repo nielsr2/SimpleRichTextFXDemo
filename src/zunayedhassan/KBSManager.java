@@ -3,7 +3,6 @@ package zunayedhassan;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 
-import static javafx.geometry.Orientation.VERTICAL;
 import static javafx.geometry.Pos.BOTTOM_RIGHT;
 
 //import javafx.scene.paint.Paint;
@@ -24,7 +23,7 @@ public class KBSManager extends FlowPane {
 //        this._init();
 //        this._initializeEvents();
         // this.OUR.stroke(new Paint());
-        this.setOrientation(VERTICAL);
+        // this.setOrientation(VERTICAL);
         this.setPadding(new Insets(5, 5, 5, 5));
         this.setVgap(5);
         this.setStyle("-fx-border-color: black");

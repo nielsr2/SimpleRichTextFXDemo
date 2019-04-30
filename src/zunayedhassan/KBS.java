@@ -73,6 +73,17 @@ public class KBS extends Group {
 
     }
 
+    KBS(String iconURL, String textKBS) {
+        HBox content = new HBox(5);
+        content.setPadding(new Insets(5, 5, 5, 5));
+        ImageView imageView = new ImageView(new Image(iconURL));
+        imageView.setFitWidth(40);
+        imageView.setPreserveRatio(true);
+        imageView.setSmooth(true);
+        imageView.setCache(true);
+        Text shortcut = new Text(textKBS);
+        shortcut.setFont(new Font(30));
+    }
     KBS(String oprSystem){
         this.oprSystem = oprSystem;
     }
