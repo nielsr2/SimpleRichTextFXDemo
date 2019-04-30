@@ -27,25 +27,24 @@ public class KBS {
 
     private double opacity = 1;
 
-    KBS(){
+    KBS() {
 
 
-    /** colors for the gradient */
-    // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
+        /** colors for the gradient */
+        // http://www.java2s.com/Tutorials/Java/JavaFX/0110__JavaFX_Gradient_Color.htm
 
-    Color grColorGrey1 = new Color(0.5, 0.5, 0.5, 0.30);
-    Color grColorGrey2 = new Color(0.7, 0.7, 0.7, 0.15);
+        Color grColorGrey1 = new Color(0.5, 0.5, 0.5, 0.30);
+        Color grColorGrey2 = new Color(0.7, 0.7, 0.7, 0.15);
 
-    Color grColorRed1 = new Color(0.5, 0, 0, 0.70);
-    Color grColorRed2 = new Color(0.5, 0, 0, 0.30);
+        Color grColorRed1 = new Color(0.5, 0, 0, 0.70);
+        Color grColorRed2 = new Color(0.5, 0, 0, 0.30);
 
-    Color grColorYellow1 = new Color(0.9, 0.7, 0, 0.70);
-    Color grColorYellow2 = new Color(0.9, 0.7, 0, 0.30);
+        Color grColorYellow1 = new Color(0.9, 0.7, 0, 0.70);
+        Color grColorYellow2 = new Color(0.9, 0.7, 0, 0.30);
 
-    Color grColorGreen1 = new Color(0.2, 0.6, 0, 0.70);
-    Color grColorGreen2 = new Color(0.2, 0.6, 0, 0.30);
+        Color grColorGreen1 = new Color(0.2, 0.6, 0, 0.70);
+        Color grColorGreen2 = new Color(0.2, 0.6, 0, 0.30);
 
-    KBS(){
     }
 
     KBS(String oprSystem){
