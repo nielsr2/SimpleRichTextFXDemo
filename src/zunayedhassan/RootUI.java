@@ -26,10 +26,9 @@ import java.util.List;
 public class RootUI extends BaseUI {
     public ToolBar RichTextToolBar = new ToolBar();
     public RichText RichTextControl = new RichText();
-    public KBSManager km = new KBSManager();
-    //*********************************************************************************************************************************************************************** P2
-    protected KBS[] KBSArray = new KBS[20];
-    //*********************************************************************************************************************************************************************** P2
+//    //*********************************************************************************************************************************************************************** P2
+//    protected KBS[] KBSArray = new KBS[20];
+//    //*********************************************************************************************************************************************************************** P2
     protected ScrollPane scrollPane = null;
     protected ComboBox<String> fontsCombobox = this._getFontsCombobox();
     protected ComboBox<String> fontSizeComboBox = this._getFontSizeComboBox();
@@ -47,16 +46,13 @@ public class RootUI extends BaseUI {
     public RootUI() {    
         this._initializeLayout();
         this._initializeEvents();
-        this.getChildren().addAll(km);
         //*********************************************************************************************************************************************************************** P2
         //this.setBottom(kbsManager.OUR);
 //        KeyCombination kc = new KeyCodeCombination(KeyCode.B, KeyCombination.ALT_DOWN);
 //        Mnemonic mn = new Mnemonic(boldToggleButton, kc);
 
         //*********************************************************************************************************************************************************************** P2
-        for(int i=0; i<KBSArray.length; i++) {
-            KBSArray[i] = new KBS();
-        }
+
     }
 
 
@@ -128,7 +124,10 @@ public class RootUI extends BaseUI {
         );
         
         this.setTop(this.RichTextToolBar);
+        this.RichTextToolBar.setStyle("-fx-border-color: red");
+
         this.scrollPane = new ScrollPane(this.RichTextControl);
+        this.RichTextControl.setStyle("-fx-border-color: blue");
         this.setCenter(this.RichTextControl);
         
         scrollPane.setFitToWidth(true);
@@ -229,39 +228,5 @@ public class RootUI extends BaseUI {
         });
     }
 
-    void SetUpListenersfortbubbbnbb(){
 
-        this.boldToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                int bold = 0;
-                KBSArray[bold].KBSused();
-            }
-        });
-
-        this.italicToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                int italic = 1;
-                KBSArray[italic].KBSused();
-            }
-        });
-
-        this.underlineToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                int underline = 2;
-                KBSArray[underline].KBSused();
-            }
-        });
-
-        this.strikethroughToggleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                int strikethrough = 3;
-                KBSArray[strikethrough].KBSused();
-            }
-        });
-
-    }
 }

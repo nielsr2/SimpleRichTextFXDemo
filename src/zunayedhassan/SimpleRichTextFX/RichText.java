@@ -648,16 +648,16 @@ public class RichText extends VBox {
                         }
                     }
                 }
-                // [Ctrl]
-                 if (event.getCode() == KeyCode.CONTROL) {
-                    _isShortcutKeyPressed = true;
-                    System.out.println("SHORTCUT DOWN!!!!");
-                     System.out.println(event.getCharacter());
-                 }
-                 if (_isShortcutKeyPressed && (event.getCharacter() == "b")) {
-                    System.out.println("BOLLLLLLDDDD");
-                    SetBold(IsCurrentFontBold);
-                }
+//                // [Ctrl]
+//                 if (event.getCode() == KeyCode.CONTROL) {
+//                    _isShortcutKeyPressed = true;
+//                    System.out.println("SHORTCUT DOWN!!!!");
+//                     System.out.println(event.getCharacter());
+//                 }
+//                 if (_isShortcutKeyPressed && (event.getCharacter() == "b")) {
+//                    System.out.println("BOLLLLLLDDDD");
+//                    SetBold(IsCurrentFontBold);
+//                }
                 else if (event.getCode() == KeyCode.CONTROL) {
                     _isCtrlKeyPressed = true;
                 }

@@ -20,6 +20,8 @@ public class MyApp extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setScene(CommonTools.GET_SCENE_AND_INITIALIZE(primaryStage));
         primaryStage.show();
+        System.out.println("US DEBUGGIN::::");
+        System.out.println(primaryStage);
         Node JL = primaryStage.getScene().lookup("#justLeft");
         Node JR = primaryStage.getScene().lookup("#justRight");
         Node JC = primaryStage.getScene().lookup("#justCenter");
