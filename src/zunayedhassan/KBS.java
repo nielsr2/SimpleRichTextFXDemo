@@ -14,6 +14,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class KBS {
     private String oprSystem;
@@ -113,7 +114,7 @@ public class KBS {
         fade.setAutoReverse(true);
         fade.play(); //start animation
 
-        this.setOnMousePressed(e -> System.out.println("adasfdf"));
+        //this.setOnMousePressed(e -> System.out.println("adasfdf"));
 
 
     }
